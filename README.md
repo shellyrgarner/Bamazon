@@ -3,7 +3,7 @@ Screencastify Video:
 https://drive.google.com/file/d/1q22KJt9xC51k-U3gB4Rxq8kmMaPwZnJl/view
 
 Challenge #1: Customer View (Minimum Requirement)
-Created a MySQL Database called bamazon.
+-Created a MySQL Database called bamazon.
 Then created a Table inside of that database called products.
 Products table has the following columns:
 
