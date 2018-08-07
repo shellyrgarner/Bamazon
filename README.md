@@ -22,3 +22,6 @@ https://drive.google.com/file/d/1q22KJt9xC51k-U3gB4Rxq8kmMaPwZnJl/view
 
 >Once the customer places their order, the app checks if the item is in stock.  If it is in stock the order is fulfilled and the total is given.  The bamazon database is also updated to reflect the updated stock quantity in the products table. 
 >If not, the app logs the phrase Insufficient quantity!, and prevents the order from going through (app is restarted).
+
+![MySql](/images/mysql.png)
+Format: ![Products Table](url)
