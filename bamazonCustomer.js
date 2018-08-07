@@ -21,7 +21,7 @@ function startApp() {
             // console.log(answer);
             if (err) throw err;
             for (var i = 0; i < res.length; i++) {
-                console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + res[i].price + " | " + res[i].stock_quantity);
+                console.log(res[i].item_id + " | " + res[i].product_name + " | " + res[i].department_name + " | " + parseFloat(res[i].price).toFixed(2) + " | " + res[i].stock_quantity);
             }
 
             inquirer
@@ -40,6 +40,7 @@ function startApp() {
                 .then(function (answer) {
                     var chosenID;
                     var quantityRemaining = 0;
+                    var total = 0;
 
                     for (var i = 0; i < res.length; i++) {
                      
@@ -47,7 +48,16 @@ function startApp() {
                             chosenID = res[i].item_id;
                             quantityRemaining += res[i].stock_quantity;
 
+                            // if(answer.units == 1) {
+                            //     total = parseFloat(res[i].price).toFixed(2);
+                            // }
+                            // else {
+                                total = parseFloat(answer.units).toFixed(2) * parseFloat(res[i].price).toFixed(2);
+
+                            // }
+
                             console.log("It's your lucky day! We have " + res[i].stock_quantity + " in stock.  Enjoy your purchase.")
+                            console.log("Your total is: " + total);
                             quantityRemaining -= answer.units;
 
                             connection.query(
@@ -64,24 +74,23 @@ function startApp() {
                                     if (error) throw err;
                                     // console.log("Stock updated successfully!");
                                     //  console.log("------------------------------------------");
-
                                     // restart();
                                 }
                             );
                             console.log("Stock updated successfully!");
                             console.log("Quantity remaining for " + res[i].product_name + ": " + quantityRemaining);
                             
-                                     console.log("------------------------------------------");
+                            console.log("------------------------------------------");
 
                                     restart();
                         }
-                        else if (res[i].item_id == answer.itemID && res[i].stock_quantity == 0) {
-                            console.log("Insufficient quantity!");
-                            console.log("Please choose another item!");
-                            console.log("------------------------------------------");
+                        // else if (res[i].item_id == answer.itemID && res[i].stock_quantity == 0) {
+                        //     console.log("Insufficient quantity!");
+                        //     console.log("Please choose another item!");
+                        //     console.log("------------------------------------------");
 
-                            restart();
-                        }
+                        //     restart();
+                        // }
                     }
                 });
         }
