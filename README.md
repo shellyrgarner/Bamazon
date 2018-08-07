@@ -25,3 +25,12 @@ https://drive.google.com/file/d/1q22KJt9xC51k-U3gB4Rxq8kmMaPwZnJl/view
 
 ![MySql](/images/mysql.png)
 Format: ![Products Table](url)
+
+![Node](/images/successful.png)
+Format: ![bamazonApp successful purchase](url)
+
+![Node](/images/successful_2.png)
+Format: ![bamazonApp successful purchase 2](url)
+
+![Node](/images/insufficient_quantity.png)
+Format: ![bamazonApp insufficient quantity](url)
