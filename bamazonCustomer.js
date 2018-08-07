@@ -52,7 +52,7 @@ function startApp() {
                             //     total = parseFloat(res[i].price).toFixed(2);
                             // }
                             // else {
-                                total = parseFloat(answer.units).toFixed(2) * parseFloat(res[i].price).toFixed(2);
+                                total = (answer.units * res[i].price).toFixed(2);
 
                             // }
 
@@ -84,13 +84,13 @@ function startApp() {
 
                                     restart();
                         }
-                        // else if (res[i].item_id == answer.itemID && res[i].stock_quantity == 0) {
-                        //     console.log("Insufficient quantity!");
-                        //     console.log("Please choose another item!");
-                        //     console.log("------------------------------------------");
+                        else if (res[i].item_id == answer.itemID && res[i].stock_quantity == 0) {
+                            console.log("Insufficient quantity!");
+                            console.log("Please choose another item!");
+                            console.log("------------------------------------------");
 
-                        //     restart();
-                        // }
+                            restart();
+                        }
                     }
                 });
         }
